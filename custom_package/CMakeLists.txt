@@ -47,10 +47,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  Custom.msg
-)
+# add_message_files(
+#   FILES
+#   Custom.msg
+# )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -67,10 +67,10 @@ add_message_files(
 # )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  std_msgs  # Or other packages containing msgs
-)
+# generate_messages(
+#   DEPENDENCIES
+#   std_msgs  # Or other packages containing msgs
+# )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -102,9 +102,9 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
- INCLUDE_DIRS include
- LIBRARIES custom_package
- CATKIN_DEPENDS message_generation roscpp message_runtime
+#  INCLUDE_DIRS include
+#  LIBRARIES custom_package
+#  CATKIN_DEPENDS message_generation roscpp message_runtime
 #  DEPENDS system_lib
 )
 
@@ -115,19 +115,19 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
+  # include
+  # ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
-add_library(custom_package
-  src/hello.cpp
-)
+# add_library(custom_package
+#   src/hello.cpp
+# )
 
-target_link_libraries(
-  custom_package
-  ${catkin_LIBRARIES}
-)
+# target_link_libraries(
+#   custom_package
+#   ${catkin_LIBRARIES}
+# )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -137,7 +137,7 @@ target_link_libraries(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(hello_node src/hello_node.cpp)
+# add_executable(hello_node src/hello_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -146,14 +146,14 @@ add_executable(hello_node src/hello_node.cpp)
 # set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX "")
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(hello_node
-  custom_package
-  ${catkin_LIBRARIES}
-)
+# target_link_libraries(hello_node
+#   custom_package
+#   ${catkin_LIBRARIES}
+# )
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(hello_node ${custom_package_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(hello_node ${custom_package_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 #############
 ## Install ##
