@@ -129,6 +129,11 @@ target_link_libraries(
   ${catkin_LIBRARIES}
 )
 
+add_dependencies(
+  custom_package
+  ${custom_package_EXPORTED_TARGETS}
+)
+
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
